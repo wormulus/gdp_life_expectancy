@@ -50,6 +50,7 @@ handles = [plt.Rectangle((0,0),1,1, color=ages[label]) for label in labels]
 plt.legend(handles, labels)
 plt.title("Life Expectancy by Country")
 plt.ylabel("Age (years)")
+plt.savefig('stackedbarlifeexpectancy.png')
 plt.show()
 plt.clf()
 
@@ -61,6 +62,7 @@ ax.set_xticks(xvals)
 ax.set_xticklabels(countries, rotation = 45)
 plt.title("Change in Life Expectancy by Country")
 plt.ylabel("Age (years)")
+plt.savefig('lifeexpectancydiffs.png')
 plt.show()
 
 #Life expectancy by year for full data set
@@ -69,12 +71,15 @@ graph1 = sns.lmplot(x="Year", y="Life expectancy at birth (years)", data = df, h
 graph1.ax.set_xticks(years)
 graph1.ax.set_xticklabels(years, rotation = 45)
 plt.title("Life Expectancy by Year")
+plt.savefig('lifeexpectancybyyear.png')
 
 #GDP by year for full data set
 graph2 = sns.lmplot(x="Year", y="GDP", data = df, hue = "Country", fit_reg = True)
 graph2.ax.set_xticks(years)
 graph2.ax.set_xticklabels(years, rotation = 45)
 plt.title("GDP by Year")
+plt.savefig('gdpbyyear.png')
+
 
 #Question: Why do Chile and Zimbabwe have lower GDPs but largely dissimilar life expectancies??
 #Question: What happened in Zimbabwe in the early 2000s?
